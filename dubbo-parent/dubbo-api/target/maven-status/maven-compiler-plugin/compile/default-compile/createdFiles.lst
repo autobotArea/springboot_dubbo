@@ -1,0 +1,8 @@
+com\dubbo\domain\StudentScores.class
+com\dubbo\service\HelloWorldService.class
+com\dubbo\service\StudentService.class
+com\dubbo\domain\HelloWorld.class
+com\dubbo\domain\Score.class
+com\dubbo\domain\Student$StudentBuilder.class
+com\dubbo\domain\Student.class
+com\dubbo\domain\StudentScore.class

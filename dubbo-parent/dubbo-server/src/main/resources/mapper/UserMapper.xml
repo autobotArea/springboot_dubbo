@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dubbo.mapper.UserMapper">
+
+    <!--
+    执行增加操作的SQL语句
+    1.id和parameterType 分别与StudentMapper接口中的addStudent方法的名字和 参数类型一致
+    2.以#{studentName}的形式引用Student参数 的studentName属性，MyBatis将使用反射读取Student参数的此属性
+    3.#{studentName}中studentName大小写敏感。引用其他的属性与此一致
+    4.seGeneratedKeys设置为"true"表明要MyBatis获取由数据库自动生成的主键
+    5.keyProperty="id"指定把获取到的主键值注入到Student的id属性
+    -->
+
+    <!-- 当表中字段名跟实体类字段名不一致 或 为了返回list类型 可以定义returnMap -->
+    <resultMap id="userMap" type="User">
+        <id column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <!--查询 2 返回list的select语句，注意resultMap的值是指向前面定义好的 -->
+    <select id="findUser" resultMap="userMap">
+        select * from t_user
+    </select>
+
+</mapper>
